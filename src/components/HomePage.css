@@ -1,0 +1,97 @@
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    text-align: center;
+    background: linear-gradient(to bottom, #0077b6, #caf0f8);
+    color: white;
+    padding: 0 20px;
+    gap: 1rem;
+  }
+  
+  .homepage-heading-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .fa-plane {
+    color: #ffffff;
+    margin-bottom: 20px;
+    animation: planeAnimation 2s infinite, fadeIn 1.5s ease-in;
+  }
+  
+  @keyframes planeAnimation {
+    0% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(-10px);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .homepage-heading {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in;
+  }
+  
+  .homepage-second-heading {
+    font-size: 1.9rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+    animation: fadeIn 2s ease-in;
+  }
+  
+  .homepage-main-message {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    max-width: 1200px;
+    font-weight: 100;
+    animation: fadeIn 2.5s ease-in;
+  }
+  
+  .homepage-secondary-message {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    max-width: 1200px;
+    animation: fadeIn 3s ease-in;
+  }
+  
+  .explore-btn {
+    padding: 12px 25px;
+    font-size: 1.6rem;
+    color: #fff;
+    background-color: #0077b6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 3.5s ease-in;
+  }
+  
+  .explore-btn:hover {
+    background-color: #03045e;
+    transform: scale(1.05);
+  }
+  

@@ -1,0 +1,11 @@
+.weather-page-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-page-controls {
+    display: flex;
+    background-color: brown;
+    justify-content: center;
+    padding: 10px;
+}
