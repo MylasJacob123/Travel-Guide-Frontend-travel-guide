@@ -49,8 +49,8 @@ function Weather({ setLocation, initialLocation, setAttractions }) {
 
       if (data.coord) {
         setLocation({ lat: data.coord.lat, lng: data.coord.lon });
-        fetchAttractions(data.coord.lat, data.coord.lon); 
-        fetchForecastByCoordinates(data.coord.lat, data.coord.lon); 
+        fetchAttractions(data.coord.lat, data.coord.lon);
+        fetchForecastByCoordinates(data.coord.lat, data.coord.lon);
       }
     } catch (error) {
       setError(error.message);
@@ -74,7 +74,7 @@ function Weather({ setLocation, initialLocation, setAttractions }) {
       const data = await response.json();
       setWeatherData(data);
       fetchForecastByCoordinates(lat, lng);
-      fetchAttractions(lat, lng); 
+      fetchAttractions(lat, lng);
     } catch (error) {
       setError(error.message);
     } finally {
@@ -219,7 +219,7 @@ function Weather({ setLocation, initialLocation, setAttractions }) {
             placeholder="Enter City"
             required
           />
-          <button type="submit">Get Weather</button>
+          <button type="submit">Get Info</button>
         </div>
       </form>
 
@@ -227,13 +227,9 @@ function Weather({ setLocation, initialLocation, setAttractions }) {
       {error && <div>Error: {error}</div>}
 
       {weatherData && (
-        <div>
-          <h1>Weather in {weatherData.name}</h1>
-          <p>Temperature: {weatherData.main.temp}°C</p>
-          <p>Weather: {weatherData.weather[0].description}</p>
-          <p>Humidity: {weatherData.main.humidity}%</p>
-          <p>Wind Speed: {weatherData.wind.speed} m/s</p>
+        <div className="weather-page-main-card">
           <div>
+            <h1> {weatherData.name}</h1>
             <img
               src={getWeatherImage(weatherData.weather[0].description).url}
               alt={weatherData.weather[0].description}
@@ -242,6 +238,10 @@ function Weather({ setLocation, initialLocation, setAttractions }) {
               {getWeatherImage(weatherData.weather[0].description).explanation}
             </p>
           </div>
+          <p>Temperature: {weatherData.main.temp}°C</p>
+          <p>Weather: {weatherData.weather[0].description}</p>
+          <p>Humidity: {weatherData.main.humidity}%</p>
+          <p>Wind Speed: {weatherData.wind.speed} m/s</p>
         </div>
       )}
 

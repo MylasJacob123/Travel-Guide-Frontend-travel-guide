@@ -16,7 +16,7 @@ const Map = ({ location, attractions }) => {
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         center={center}
-        zoom={15}
+        zoom={12}
         options={{
           scrollwheel: true,
           draggable: true,

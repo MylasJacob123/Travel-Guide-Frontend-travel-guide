@@ -24,7 +24,7 @@ function Navigation() {
             to="/display" 
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
-            Display
+            Start Your Journey
           </NavLink>
         </li>
         <li>

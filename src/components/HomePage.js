@@ -1,17 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "./HomePage.css";
 import { useNavigate } from "react-router-dom";
 import "font-awesome/css/font-awesome.min.css";
 
 function HomePage() {
   const navigate = useNavigate();
+  const [showOptions, setShowOptions] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const onToExplorePage = () => {
-    navigate("/display")
-  }
+  const handleExploreClick = () => {
+    setShowOptions(true);
+  };
+
+  const handleSearch = () => {
+    navigate("/display", { state: { query: searchQuery } });
+  };
+
+  const handleGetCurrentLocation = () => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        navigate("/display", { state: { location: { lat: latitude, lng: longitude } } });
+      },
+      (error) => {
+        console.error("Error fetching location:", error);
+        alert("Unable to fetch your location. Please enable location services.");
+      }
+    );
+  };
+
   return (
     <div className="homepage-container">
-      <div class="homepage-heading-section">
+      <div className="homepage-heading-section">
         <i className="fa fa-plane fa-3x"></i>
         <h1 className="homepage-heading">Welcome to Travel Guide</h1>
       </div>
@@ -26,8 +46,29 @@ function HomePage() {
         Let the weather inspire your next destination! Where will your adventure
         take you today?
       </p>
-      <button className="explore-btn" onClick={onToExplorePage}>Explore</button>
+      {!showOptions ? (
+        <button className="explore-btn" onClick={handleExploreClick}>
+          Explore
+        </button>
+      ) : (
+        <div className="explore-options">
+          <input
+            type="text"
+            placeholder="Search for a location..."
+            className="search-input"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <button className="search-btn" onClick={handleSearch}>
+            Search
+          </button>
+          <button className="location-btn" onClick={handleGetCurrentLocation}>
+            Get Current Location
+          </button>
+        </div>
+      )}
     </div>
   );
 }
+
 export default HomePage;
