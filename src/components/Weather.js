@@ -15,7 +15,7 @@ function Weather({ setLocation, initialLocation, setAttractions }) {
   const fetchAttractions = async (lat, lng) => {
     try {
       const response = await fetch(
-        `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=5000&type=tourist_attraction&key=${GOOGLE_API_KEY}`
+        `/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=5000&type=tourist_attraction&key=${GOOGLE_API_KEY}`
       );
 
       if (!response.ok) {
@@ -105,10 +105,6 @@ function Weather({ setLocation, initialLocation, setAttractions }) {
 
   const handleCityChange = (e) => {
     setCity(e.target.value);
-  };
-
-  const convertTemperature = (temp) => {
-    return temp;
   };
 
   const getWeatherImage = (description) => {

@@ -9,7 +9,7 @@ function MainDisplay() {
   const [location, setLocation] = useState(state?.location || null);
   const [searchQuery, setSearchQuery] = useState(state?.query || "");
   const [attractions, setAttractions] = useState([]);
-  const API_KEY = "9f62ada4458337c8090427bcadd88a95";
+  const API_KEY = process.env.REACT_APP_WEATHER_API;
 
   useEffect(() => {
     if (searchQuery && !location) {
