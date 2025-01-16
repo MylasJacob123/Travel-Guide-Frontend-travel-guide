@@ -6,7 +6,7 @@ import MainDisplay from "./components/MainDisplay";
 import Navigation from "./components/Navigation";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Forgot from "./components/Forgot";
+import Forgot from "./components/forgot";
 import "./App.css";
 
 function App() {
