@@ -23,6 +23,8 @@ function Forgot() {
     alert("Password reset link sent to your email.");
   };
 
+//   console.log()
+
   return (
     <div className="Login">
       <div className="LoginPage">
