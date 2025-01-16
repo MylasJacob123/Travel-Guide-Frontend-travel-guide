@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   padding: 20px;
-  background: linear-gradient(to bottom, #f0f8ff, #dff9fb);
+  background: linear-gradient(to bottom, #0077b6, #90e0ef, #caf0f8);
   min-height: 100vh;
   color: #333;
   gap: 1.3rem;

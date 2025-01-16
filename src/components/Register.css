@@ -1,14 +1,14 @@
-.Login {
+.Register {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 90vh;
   background: linear-gradient(to bottom, #0077b6, #90e0ef, #caf0f8);
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
-.LoginPage {
+.RegisterPage {
   display: flex;
   flex-direction: row;
   width: 60%;
@@ -19,7 +19,7 @@
   overflow: hidden;
 }
 
-.LoginPage-up {
+.RegisterPage-up {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -27,13 +27,13 @@
   background-color: #0077b6;
 }
 
-.LoginPage-image {
+.RegisterPage-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.LoginPage-down {
+.RegisterPage-down {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -44,22 +44,20 @@
   background-color: white;
 }
 
-.LoginPage-heard {
-  color: #0077b6;
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-.Forgot-heard {
+.RegisterPage-heard {
   color: #0077b6;
   font-size: 1.8rem;
   font-weight: 400;
   text-align: center;
-  width: 55%;
 }
 
-.LoginPage-error {
+.RegisterPage-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.RegisterPage-error {
   color: #d00000;
   font-size: 0.9rem;
   background: #ffcccc;
@@ -69,7 +67,7 @@
   text-align: center;
 }
 
-.LoginPage-Email {
+.RegisterPage-Email {
   border: 2px solid #0077b6;
   border-radius: 8px;
   width: 100%;
@@ -82,39 +80,38 @@
   transition: border-color 0.3s ease;
 }
 
-.LoginPage-Password {
-  border: 2px solid #0077b6;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 300px;
-  height: 40px;
-  padding: 0.5rem;
-  padding-right: 2.5rem;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.LoginPage-Email:focus,
-.LoginPage-Password:focus {
-  border-color: #90e0ef;
-}
-
-.LoginPage-Password-Container {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-}
-
-.LoginPage-Password-Toggle {
-  position: absolute;
-  top: 36%;
-  right: 10px;
-  transform: translateY(-50%);
-  cursor: pointer;
-  font-size: 1.5rem;
-  color: #555;
-}
+.RegisterPage-Password-Container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .RegisterPage-Password {
+    border: 2px solid #0077b6;
+    border-radius: 8px;
+    width: 100%;
+    height: 40px;
+    padding: 0.5rem;
+    padding-right: 40px; 
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .RegisterPage-Password-Toggle {
+    position: absolute;
+    top: 60%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #555;
+  }
+  
+  .RegisterPage-Password:focus {
+    border-color: #90e0ef;
+  }
+  
 
 .Forgot-Container {
   display: flex;
@@ -137,8 +134,7 @@
   text-decoration: underline;
 }
 
-
-.LoginPage-button {
+.RegisterPage-button {
   background-color: #0077b6;
   border: none;
   border-radius: 8px;
@@ -149,36 +145,14 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: center;
 }
 
-.LoginPage-button:hover {
+.RegisterPage-button:hover {
   background-color: #023e8a;
   transform: scale(1.05);
 }
 
-.LoginPage-button:active {
-  background-color: #0096c7;
-}
-
-.ForgotPage-button {
-  margin-top: 10px;
-  background-color: #0077b6;
-  border: none;
-  border-radius: 8px;
-  height: 45px;
-  width: 150px;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.ForgotPage-button:hover {
-  background-color: #023e8a;
-  transform: scale(1.05);
-}
-
-.ForgotPage-button:active {
+.RegisterPage-button:active {
   background-color: #0096c7;
 }
